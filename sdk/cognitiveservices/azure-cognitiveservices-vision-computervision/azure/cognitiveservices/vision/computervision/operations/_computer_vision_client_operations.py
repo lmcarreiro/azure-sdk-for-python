@@ -1713,7 +1713,7 @@ class ComputerVisionClientOperationsMixin(object):
             header_parameters.update(custom_headers)
 
         # Construct body
-        body_content = self._client.stream_upload(image, callback)
+        body_content = image.read()
 
         # Construct and send request
         request = self._client.post(url, query_parameters, header_parameters, body_content)
